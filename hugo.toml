@@ -60,3 +60,6 @@ keywords = "camping, tarbes, agroecologie, ateliers, permaculture, apiculture"
 
 [params.contact]
 email = "contact@coccinelle-et-libellule.fr"
+
+[markup.goldmark.renderer]
+unsafe= true
