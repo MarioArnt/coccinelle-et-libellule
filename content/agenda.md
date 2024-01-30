@@ -1,5 +1,5 @@
 ---
-title: "Le lieu"
+title: "Agenda"
 ---
 
 > Pas d'évenements pour le moment
