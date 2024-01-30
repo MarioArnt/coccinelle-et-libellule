@@ -20,12 +20,9 @@ jobs:
           hugo-version: '0.122.0'
       - name: Build
         run: hugo --minify
-      - name: 'Deploy to Netlify'
-        uses: jsmrcaga/action-netlify-deploy@v2.0.0
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_DEPLOY_TO_PROD: true
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          install_command: "echo Skipping installing the dependencies"
-          build_command: "echo Skipping building the web files"
-          build_directory: "public"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
